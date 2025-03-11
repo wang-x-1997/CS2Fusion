@@ -1,6 +1,6 @@
 # CS2Fusion
 Source code of the paper ***CS2Fusion: Contrastive Learning for Self-Supervised Infrared and Visible Image Fusion by Estimating Feature Compensation Map*** which has been accepted by INF FUS.
-- [[Ppaer](https://www.sciencedirect.com/science/article/pii/S156625352300355X)]
+- [[Paper](https://www.sciencedirect.com/science/article/pii/S156625352300355X)]
 - Xue Wang, Zheng Guan, Wenhua Qian, Jinde Cao, Shu Liang, Jin Yan
 
 # Abstract
