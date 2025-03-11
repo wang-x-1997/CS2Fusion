@@ -136,8 +136,8 @@ parser.add_argument('--cuda', action='store_true', help='use cuda')
 opt = parser.parse_args()
 device = torch.device("cuda")
 
-model_path_1 =r'D:\OurWork\4 CS2Fusion (Information Fusion)\data\data\best/2stop_20.pth'  #3-3500  #单一SA 17-2500
-model_path_2 =r'D:\OurWork\4 CS2Fusion (Information Fusion)\data\data\best/2stop_20_1.pth'
+model_path_1 =r'./Model/Backbone Network.pth'  #3-3500  #单一SA 17-2500
+model_path_2 =r'./Model/CPN.pth'
 
 model_1 = torch.load(model_path_1)
 model_2 = torch.load(model_path_2)
