@@ -17,7 +17,7 @@ In infrared and visible image fusion (IVIF), prior knowledge constraints establi
 
 # :triangular_flag_on_post: Testing
 If you want to infer with our DAFusion and obtain the fusion results in our paper, please run ```test.py```.
-Then, the fused results will be saved in the ```'./Output/'``` folder.
+Then, the fused results will be saved in the ```'./Fused/'``` folder.
 
 # :triangular_flag_on_post: Training
 You can change your own data address in ```dataset.py``` and use ```train.py``` to retrain the method.
@@ -25,17 +25,18 @@ You can change your own data address in ```dataset.py``` and use ```train.py``` 
 # :triangular_flag_on_post: Citation
 If this work is helpful to you, please cite it as:
 ```bibtex
-@article{WANG2025102931,
-title = {A degradation-aware guided fusion network for infrared and visible image},
+@article{WANG2024102039,
+title = {CS2Fusion: Contrastive learning for Self-Supervised infrared and visible image fusion by estimating feature compensation map},
 journal = {Information Fusion},
-pages = {102931},
-year = {2025},
+volume = {102},
+pages = {102039},
+year = {2024},
 issn = {1566-2535},
-doi = {https://doi.org/10.1016/j.inffus.2025.102931},
-url = {https://www.sciencedirect.com/science/article/pii/S1566253525000041},
-author = {Xue Wang and Zheng Guan and Wenhua Qian and Jinde Cao and Runzhuo Ma and Cong Bi},
-keywords = {Image fusion, Contrastive learning, Unpaired image training mechanism, Anti-degeneration},
-abstract = {Most IVIF methods focus solely on visual feature fusion, neglecting degraded scene information, which results in suboptimal solutions that do not fully reflect implicit scene information. To tackle the challenge, we develop a degradation-aware fusion network for infrared and visible images. By learning implicit degradation estimation, our model not only effectively integrates complementary information from source images but also strengthens its robustness against scene degradation. Our method assumes that all source images contain varying degrees of degradation. Based on this assumption, we construct stable positive samples and dynamic negative samples using encoder variants and high-quality, degradation-free images, thus driving the model to identify and optimize degradations in the source images during contrastive learning of unpaired representation features. Additionally, the co-refinement fusion module (CrFM) exploits the interdependence between representation features and source information, enabling it to mine specialized information within each source and complementary information across sources. This facilitates effective feature aggregation while mitigating information loss during fusion. To further enhance the model, we introduce image-level saliency masks and feature-level energy variation masks to reduce the solution domain, encouraging the model to prioritize intrinsic source content, especially details obscured by degradation. Extensive experiments on static data statistics and high-level vision tasks validate the superiority of the proposed method, and its robust anti-degradation capability makes it more stable than other SOTA methods when facing unknown degradations. The code has been released publicly.}
+doi = {https://doi.org/10.1016/j.inffus.2023.102039},
+url = {https://www.sciencedirect.com/science/article/pii/S156625352300355X},
+author = {Xue Wang and Zheng Guan and Wenhua Qian and Jinde Cao and Shu Liang and Jin Yan},
+keywords = {Image fusion, Contrastive learning, Feature compensation map, Identity and divergence},
+abstract = {In infrared and visible image fusion (IVIF), prior knowledge constraints established with image-level information often ignore the identity and differences between source image features and cannot fully utilize the complementary information role of infrared images to visible images. For this purpose, this study develops a Contrastive learning-based Self-Supervised fusion model (CS2Fusion), which considers infrared images as a complement to visible images, and develops a Compensation Perception Network (CPN) to guide the backbone network to generate fusion images by estimating the feature compensation map of infrared images. The core idea behind this method is based on the following observations: (1) there is usually a significant disparity in semantic information between different modalities; (2) despite the large semantic differences, the distribution of self-correlation and saliency features tends to be similar among the same modality features. Building upon these observations, we use self-correlation and saliency operation (SSO) to construct positive and negative pairs, driving CPN to perceive the complementary features of infrared images relative to visible images under the constraint of contrastive loss. CPN also incorporates a self-supervised learning mechanism, where visually impaired areas are simulated by randomly cropping patches from visible images to provide more varied information of the same scene to form multiple positive samples to enhance the model’s fine-grained perception capability. In addition, we also designed a demand-driven module (DDM) in the backbone network, which actively queries to improve the information between layers in the image reconstruction, and then integrates more spatial structural information. Notably, the CPN as an auxiliary network is only used in training to drive the backbone network to complete the IVIF in a self-supervised form. Experiments on various benchmark datasets and high-level vision tasks demonstrate the superiority of our CS2Fusion over the state-of-the-art IVIF method.}
 }
 ```
 
